@@ -41,4 +41,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function companion() {
+
+        return $this->hasMany(Companion::class);
+    }
+
+    public function review() {
+
+        return $this->hasOne(Review::class);
+    }
+
+    public function reservation() {
+
+        return $this->belongsToMany(Reservation::class);
+    }
 }

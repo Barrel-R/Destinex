@@ -13,8 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('reservation_user', function (Blueprint $table) {
+        Schema::create('locations', function (Blueprint $table) {
             $table->id();
+            $table->string('address');
+            $table->json('details')->nullable();
+            $table->point('coordinates');
+            $table->json('geocoding_info')->nullable();
+            $table->json('place_details')->nullable();
+            $table->json('directions')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reservation_user');
+        Schema::dropIfExists('locations');
     }
 };
