@@ -9,6 +9,15 @@ class Location extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'address',
+        'details',
+        'coordinates',
+        'geocoding_info',
+        'place_details',
+        'directions',
+    ];
+
     public function item() {
 
         return $this->belongsTo(BookableItem::class);

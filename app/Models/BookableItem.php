@@ -9,6 +9,15 @@ class BookableItem extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name', 
+        'title', 
+        'description', 
+        'type', 
+        'available', 
+        'price',
+    ];
+
     public function category() {
 
         return $this->belongsTo(Category::class, 'item_id');

@@ -11,6 +11,12 @@ class Category extends Model
 
     protected $table = 'categories';
 
+    protected $fillable = [
+        'name', 
+        'description', 
+        'image_url'
+    ];
+
     public function item() {
 
         return $this->hasOne(Item::class);

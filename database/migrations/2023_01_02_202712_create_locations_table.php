@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('locations', function (Blueprint $table) {
             $table->id();
             $table->string('address');
-            $table->json('details')->nullable();
             $table->point('coordinates');
             $table->json('geocoding_info')->nullable();
             $table->json('place_details')->nullable();

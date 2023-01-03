@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('description');
             $table->string('type');
+            $table->json('images_url');
             $table->unsignedBigInteger('category_id')->nullable()->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->foreignId('location_id')->constrained();
