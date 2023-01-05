@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreign('item_id')->references('id')->on('bookable_items');
             $table->date('arrival_date');
             $table->date('departure_date');
+            $table->string('payment_type');
             $table->timestamps();
         });
     }

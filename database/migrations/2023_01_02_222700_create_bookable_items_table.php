@@ -25,6 +25,7 @@ return new class extends Migration
             $table->foreignId('location_id')->constrained();
             $table->boolean('available')->default(false);
             $table->decimal('price', 2, 1);
+            $table->decimal('refund_percentage', 3, 2)->nullable();
             $table->timestamps();
         });
     }
