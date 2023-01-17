@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Companion extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'age',
+        'relationship',
+        'special_requirements'
+    ];
+
+    public function user() {
+
+        return $this->belongsTo(User::class);
+    }
 }

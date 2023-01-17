@@ -13,8 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('bookable_items', function (Blueprint $table) {
+        Schema::create('locations', function (Blueprint $table) {
             $table->id();
+            $table->string('address');
+            $table->point('coordinates');
+            $table->json('geocoding_info')->nullable();
+            $table->json('place_details')->nullable();
+            $table->json('directions')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bookable_items');
+        Schema::dropIfExists('locations');
     }
 };
