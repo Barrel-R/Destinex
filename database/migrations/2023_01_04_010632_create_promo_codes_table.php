@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('promo_codes', function (Blueprint $table) {
             $table->id();
             $table->string('code')->unique();
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->decimal('discount', 3, 2);
             $table->date('valid_from');
             $table->date('valid_to');
